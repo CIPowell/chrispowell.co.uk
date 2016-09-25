@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/raleway_thin-webfont.eot') url('/fonts/raleway_thin-webfont.svg') url('/fonts/raleway_thin-webfont.ttf') url('/fonts/raleway_thin-webfont.woff');
+}
+
+@font-face {
+  font-family: 'Goudy';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/goudy_bookletter_1911-webfont.eot') url('/fonts/goudy_bookletter_1911-webfont.svg') url('/fonts/goudy_bookletter_1911-webfont.ttf') url('/fonts/goudy_bookletter_1911-webfont.woff');
+}
+
+body {
+  font-family: 'Goudy';
+}
