@@ -1,28 +1,23 @@
-# Brunch + Babel/ES6
+# Chris I Powell - the tiny website project
 
-This is a modern JS skeleton for [Brunch](http://brunch.io).
+While looking at Angular 2 and React, it quickly struck me how big and nebulous
+some of these frameworks are getting. Looking at the initial loads of Angular 2
+(creates using angular-cli) and React (using create-react-app), there were
+significant overheads for using these frameworks (2.5MB and 700ish KB each).
 
-## Installation
+While these are unminified, it still struck me that with all our modern tooling
+and myriad JS frameworks, high-speed connections and high-spec computers,
+browsers that have all the new shiny stuff... we've allowed ourselves to get
+wasteful. In building the new site, I've decided that I want to leverages these
+techs to produce a beautiful, simple, efficient website.
 
-Clone this repo manually or use `brunch new dir -s brunch/with-es6`
+My idea is for this to serve as a portfolio, a playground, a braindump and a
+soapbox. Helping me improve my skills and understanding and letting me share
+what I've learned.
 
-## Getting started
-
-* Install (if you don't have them):
-    * [Node.js](http://nodejs.org): `brew install node` on OS X
-    * [Brunch](http://brunch.io): `npm install -g brunch`
-    * Brunch plugins and app dependencies: `npm install`
-* Run:
-    * `brunch watch --server` — watches the project with continuous rebuild. This will also launch HTTP server with [pushState](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history).
-    * `brunch build --production` — builds minified project for production
-* Learn:
-    * `public/` dir is fully auto-generated and served by HTTP server.  Write your code in `app/` dir.
-    * Place static files you want to be copied from `app/assets/` to `public/`.
-    * [Brunch site](http://brunch.io), [Getting started guide](https://github.com/brunch/brunch-guide#readme)
-
-## ES7
-
-To use proposed JS features not included into ES6, do this:
-
-* `npm install --save-dev babel-preset-stage-0`
-* in `brunch-config.js`, add the preset: `presets: ['es2015', 'stage-0']`
+## Brunch.... mmm... tasty
+I decided I needed a build too, and Webpack looks interesting. But one of the
+things I always liked about Grunt was the ability split up the tasks into folders...
+once you'd used the appropriate extensions. So I chose Brunch over Webpack, as
+Brunch feels more like an evolution of Grunt/Gulp and Webpack seems more suited
+to Angular 2.  
