@@ -1,5 +1,8 @@
 default:
-  - concurrent:prep
-  - uncss
+  - build
   - connect
   - watch
+
+build:
+  - concurrent:prep
+  - uncss
