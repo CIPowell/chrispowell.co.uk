@@ -1,11 +1,12 @@
 {
   "name": "chrisipowell",
-  "description": "Description",
+  "description": "My Website",
   "author": "Your Name",
   "version": "0.0.1",
+  "license": "AGPL-1.0",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git@github.com:CIPowell/chrispowell.co.uk.git"
   },
   "scripts": {
     "build" : "grunt build"
