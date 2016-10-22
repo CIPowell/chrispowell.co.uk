@@ -6,3 +6,10 @@ default:
 build:
   - concurrent:prep
   - uncss
+
+prod:
+  - build
+  - cssmin
+  - processhtml
+  - htmlmin
+  - compress
