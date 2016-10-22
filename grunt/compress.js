@@ -5,7 +5,7 @@ module.exports = {
         },
         expand: true,
         cwd: 'public/',
-        src: ['**/*'],
+        src: ['**/*.+(js|css|html|svg|eot|ttf|otf)'],
         dest: 'public/'
     }
 }
