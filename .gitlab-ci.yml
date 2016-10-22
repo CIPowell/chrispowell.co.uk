@@ -1,7 +1,11 @@
-image: node:6-onbuild
+image: node:6
 
 before_script:
   - npm i -g grunt-cli
+
+stages:
+  - installdeps
+  - build
 
 install:
   stage: installdeps
