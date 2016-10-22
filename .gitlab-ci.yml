@@ -1,1 +1,7 @@
 image: node:6-onbuild
+
+build:
+  stage: build
+  script: grunt build
+  tags:
+    - docker
