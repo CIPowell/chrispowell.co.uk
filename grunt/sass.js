@@ -1,5 +1,5 @@
 module.exports = {
-    dist: {
+    default: {
         files : {
             'public/style/chrisipowell.css' : 'app/style/chrisipowell.scss'
         }

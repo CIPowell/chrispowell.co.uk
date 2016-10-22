@@ -36,7 +36,7 @@ nav {
     @extend .navbar-nav;
 
     &.right {
-      @extend .pull-xs-right;
+      @extend .pull-right;
     }
   }
 
@@ -60,7 +60,7 @@ nav {
 
 aside {
     @extend .bg-faded;
-    @extend .pull-md-right;
+    @extend .pull-right;
     @extend .col-md-3;
     @extend .col-sm-12;
 }
