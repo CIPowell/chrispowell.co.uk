@@ -11,7 +11,7 @@ deploy:
   skip_cleanup: true
   region: "eu-west-1"
   acl: public_read
-  cache_control: "max-age=1210000000"
+  cache_control: "max-age=86400"
   access_key_id:
     secure: Z+O8gii3nwPqH1IlAW/Be1R0hX+38yVyHvRKj58GkjMPd5RXwUmqNbqDvRWzYpG2pbbd8Eje5O2CUMaZ4K45/CSJ3+vHRxkt1ElpyVKZk1C8Cq4KFJyOxjXEgGud+zcvpDuTnDeyw98H+Zf7D6c+tSfNV50OfH3G86rEfcsf2F1R82woNR7dRe6QMtZAxFpuB8lJAOtiIFJYwm8/WGf4BkzC2wnqSzs1soLQ0vjB6Oys7mKMaPFOm7Q10OZdHzD8/qhlUNSftuG8kk/k3vg6E0dZMMLKBlptCl47wiugO3slMsTzU+GmLrQS1egdmryNu/UGnOdL522qc6oRUZPc/uIFxdjQgzP2J5LwrBDSC4rNiqZ+0VT+JDgfdNg64JB9Kg1kzIiPI9OFfkQJF1UyQ7xwCNpx6taSVeMakKpS51n8MjQM2bQ7NutgV4PYIsStz9a8CHF1HwIgxgjkGLj5+kKNtqtY0LuebhyVlSmQX51cpeqcq98yUQFHmGgqXO+dMBu/XkN7lCcstZiO5C5CjfMbTxRdtgQVH13mfkB6JvZCHDJJyXe/WbkIXJbD2fVCwgoQKffR4xf3LfjxtDLFwRzG+TUfOk0wIpiPGNK8RzEQ4U5kxw7YBJ60WwiXbzW1lYN3SwR2eyOASoKT/abjee3jd0WBiC1tiPS+kbK5GXc=
   secret_access_key:
