@@ -1,3 +1,3 @@
 module.exports = {
-    prep: ['copy', 'sass']
+    prep: ['copy', 'sass', 'copy:angular']
 }

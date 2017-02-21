@@ -8,6 +8,6 @@
     "node": true
   },
   "rules": {
-    "indent" : ["error", 4]
+    "indent" : [2, 4]
   }
 }

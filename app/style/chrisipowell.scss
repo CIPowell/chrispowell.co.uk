@@ -32,8 +32,8 @@ nav {
   ul {
 
     margin-left: -15px;
-    @extend .nav;
     @extend .navbar-nav;
+    @extend .mr-auto;
 
     &.right {
       @extend .pull-right;

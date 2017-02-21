@@ -7,6 +7,9 @@ module.exports = {
     assets: {
         files: ['app/assets/**'],
         tasks: ['copy']
+    },
+    scripts: {
+        files: ['app/scripts/**'],
+        tasks: ['copy:js']
     }
-
 }
