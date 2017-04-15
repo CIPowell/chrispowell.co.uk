@@ -1,9 +1,7 @@
-language: node_js
-node_js:
-- '6'
-before_script:
-- npm install -g grunt
-script: grunt prod
+language: go
+install: go get -v github.com/spf13/hugo
+script:
+  - hugo
 deploy:
   provider: s3
   bucket: "chrisipowell"

@@ -1,0 +1,12 @@
+languageCode = "en-us"
+title = "Chris I Powell"
+baseURL = "https://www.chrisipowell.co.uk/"
+theme = "cip"
+
+googleAnalytics = "UA-65763968-1"
+
+[Author]
+  name = "Chris I Powell"
+  github = "CIPowell"
+  twitter = "ChrisIPowell"
+  linkedin = "chris-i-powell"

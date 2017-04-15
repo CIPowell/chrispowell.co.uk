@@ -6,32 +6,24 @@
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <title>Chris I Powell</title>
-    <!--build:css inline style/chrisipowell.min.css -->
-    <link rel="stylesheet" href="/style/chrisipowell.css" charset="utf-8">
-    <!-- /build -->
-
-    <script type="text/javascript" src="/scripts/angular.js" ></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
-
   </head>
   <body>
       <header>
         <h1>Chris I Powell</h1>
         <p>Code, Sport, Coffee, Kids</p>
       </header>
-      <nav class="main">
-        <!-- <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Projects</a></li>
-        </ul> -->
-
-        <ul class="right">
-            <li><a href="https://www.linkedin.com/in/chris-i-powell"><i class="linkedin"></i></a></li>
-            <li><a href="https://twitter.com/ChrisIPowell"><i class="twitter"></i></a></li>
-        </ul>
+      <div class="social">
+          <a href="https://www.linkedin.com/in/chris-i-powell"><i class="linkedin"></i></a>
+          <a href="https://twitter.com/ChrisIPowell"><i class="twitter"></i></a>
+      </div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Blog</a>
+        <a href="#">Projects</a>
       </nav>
-      <section class="main">
+      <div ng-view>
+      </div>
+      <!-- <section class="main">
         <p class="lead">
          Currently the Lead Software Engineer at <a href="https://www.weswap.com/en">WeSwap.com</a>.
          I'm a great believer that being a developer isn't just about building against requirements.
@@ -40,6 +32,6 @@
          professionally on the backend, as well and Angular, LESS and SCSS on the front end.
         </p>
       </section>
-      <blog></blog> 
+      <blog></blog> -->
   </body>
 </html>

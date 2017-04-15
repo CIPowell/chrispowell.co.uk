@@ -13,6 +13,9 @@ header {
   h1 {
     @include make-col(12);
     font-size: 8vw;
+    @include media-breakpoint-down(xs) {
+        font-size: 18vw;
+    }
   }
 
   p {
@@ -25,43 +28,51 @@ header {
   }
 }
 
+
 nav {
-  @extend .navbar;
-  @extend .navbar-light;
-
-  ul {
-
-    margin-left: -15px;
-    @extend .navbar-nav;
-    @extend .mr-auto;
-
-    &.right {
-      @extend .pull-right;
-    }
-  }
-
-  li {
-    @extend .nav-item;
-  }
+  @extend .nav;
 
   a {
     @extend .nav-link;
-    @extend .fa-lg;
+  }
+}
 
-    &:hover {
-      text-decoration: underline;
-    }
+.social {
+  position: absolute;
+
+  font-size: 3vw;
+
+  @include media-breakpoint-down(xs) {
+      font-size: 12vw;
   }
 
-  i {
-    @extend .fa-lg;
-  }
+  top: 0em;
+  right: 0em;
+  width: 2em;
 }
 
 aside {
     @extend .pull-right;
     @extend .col-md-4;
     @extend .col-sm-12;
+}
+
+input {
+    @extend .form-control;
+}
+
+form {
+    .group {
+        @extend .form-group;
+    }
+}
+
+button {
+   @extend .btn;
+}
+
+button.primary {
+   @extend .btn-primary;
 }
 
 i {
