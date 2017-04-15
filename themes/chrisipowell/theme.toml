@@ -1,0 +1,11 @@
+name = "CIP"
+license = "MIT"
+licenselink = "https://github.com/halogenica/Hugo-BeautifulHugo/blob/master/LICENSE"
+description = "Chris I Powell's custom theme"
+tags = ["blog", "company", "portfolio", "projects", "minimal", "responsive"]
+features = ["blog", "themes", "disqus", "minimal", "responsive"]
+min_version = 0.1
+
+[author]
+    name = "ChrisIPowell"
+    homepage = "https://www.chrisipowell.co.uk"
