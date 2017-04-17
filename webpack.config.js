@@ -3,7 +3,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './app/scripts/app.js',
+    entry: './themes/chrisipowell/static/js/main.js',
     module: {
         loaders: [
             {
@@ -25,16 +25,12 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin({
-            filename: 'style/style.css',
+            filename: 'css/main.css',
             allChunks: true
-        }),
-        new HtmlWebpackPlugin({
-            title: 'Chris I Powell',
-            template: './app/assets/index.html'
         })
     ],
     output: {
-        filename: 'js/bundle.js',
-        path: path.resolve(__dirname, 'public')
+        filename: 'js/main.js',
+        path: path.resolve(__dirname, 'themes/chrisipowell/static')
     }
 }

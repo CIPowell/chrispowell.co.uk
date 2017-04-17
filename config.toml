@@ -4,6 +4,12 @@ baseURL = "https://www.chrisipowell.co.uk/"
 theme = "chrisipowell"
 
 googleAnalytics = "UA-65763968-1"
+DisqusShortname = "chrisipowell"
+
+[Params]
+  rss = true
+  comments = true
+  DisqusShortname = "chrisipowell"
 
 [Author]
   name = "Chris I Powell"
