@@ -1,0 +1,11 @@
+@import '../node_modules/tachyons-sass/tachyons.scss';
+
+body {
+    @extend .black-80;
+    @extend .avenir;
+    @extend .tc;
+}
+
+h1 {
+    @extend .fw4;
+}

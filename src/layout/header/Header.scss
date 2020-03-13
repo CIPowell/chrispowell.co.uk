@@ -1,0 +1,17 @@
+@import '../../../node_modules/tachyons-sass/tachyons.scss';
+
+header {
+    @extend .mt4;
+}
+
+header h1 {
+    @extend .f1;
+    @extend .mt1;
+    @extend .mb0;
+}
+
+header h2 {
+    @extend .fw1;
+    @extend .f3;
+    @extend .mt0;
+}
