@@ -1,0 +1,31 @@
+name: Deploy Master
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Test and build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: npm install
+      - run: npm test  
+        env: 
+          CI: true
+      - run: npm run build
+      - name: push to S3
+        uses: jakejarvis/s3-sync-action@v0.5.0
+        with:
+            args: --delete --acl public-read
+        env:
+            AWS_S3_BUCKET: www.chrisipowell.co.uk
+            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            AWS_REGION: 'eu-west-1'
+            SOURCE_DIR: 'build'

@@ -1,0 +1,20 @@
+@import '../../../node_modules/tachyons-sass/tachyons.scss';
+
+nav.main {
+    @extend .bt;
+    @extend .bb;
+    @extend .tc;
+    @extend .mt2;
+    @extend .center;
+}
+
+nav.main a {
+    @extend .f6;
+    @extend .f5-l;
+    @extend .link;
+    @extend .dib;
+    @extend .pa3;
+    @extend .black-80;
+    @extend .bg-animate;
+    @extend .hover-bg-light-blue;
+}
