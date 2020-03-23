@@ -1,5 +1,9 @@
 @import '../../../node_modules/tachyons-sass/tachyons.scss';
 
+nav {
+    @extend .relative;
+}
+
 nav.main {
     @extend .bt;
     @extend .bb;

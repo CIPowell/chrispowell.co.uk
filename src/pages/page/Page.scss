@@ -1,0 +1,35 @@
+@import '../../../node_modules/tachyons-sass/tachyons.scss';
+
+.page {
+    @extend .tl;
+    @extend .relative;
+    @extend .cf;
+
+    &-header h2 {
+        @extend .f3;
+        @extend .fw3;
+    }
+
+    &-intro {
+        @extend .f4;
+        @extend .fw1;
+    }
+}
+
+.two_columns {
+    @extend .cf;
+    @extend .flex;
+
+    img {
+        @extend .w-40;
+        @extend .pa2;
+        @extend .mr2;
+        @extend .fr;
+    }
+
+    p {
+        @extend .w-60;
+        @extend .pl2;
+        @extend .mt2;
+    }
+}

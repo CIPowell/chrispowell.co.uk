@@ -13,3 +13,11 @@ h1 {
 h2 {
     @extend .fw4;
 }
+
+.container {
+    @extend .center;
+    @extend .relative;
+    @extend .mw8;
+    @extend .tl;
+    @extend .cf;
+}
