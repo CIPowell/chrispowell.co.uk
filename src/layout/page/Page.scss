@@ -15,21 +15,3 @@
         @extend .fw1;
     }
 }
-
-.two_columns {
-    @extend .cf;
-    @extend .flex;
-
-    img {
-        @extend .w-40;
-        @extend .pa2;
-        @extend .mr2;
-        @extend .fr;
-    }
-
-    p {
-        @extend .w-60;
-        @extend .pl2;
-        @extend .mt2;
-    }
-}

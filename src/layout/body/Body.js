@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {Switch, Route } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { withLocationHook } from '../../hooks/location';
-import Page from "../../pages/page/Page"; 
+import Page from '../page/Page'; 
 
 import homepageData from '../../static/data/homepage.json';
 import aboutData from '../../static/data/about.json';

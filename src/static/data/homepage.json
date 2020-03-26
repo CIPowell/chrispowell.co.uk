@@ -1,21 +1,21 @@
 {
     "headline": "Chris has been working in an eclectic mix of companies and roles since 2006",
     "sections": [{
-        "type": "two_columns",
+        "type": "two_column",
+        "image": {
+            "src": "https://via.placeholder.com/150.png/",
+            "alt": "placeholder"
+        },
+        "text": "Based in London for the last 11 years. I've gone from Academic departments, to startups in warehouses in Kentish town to the worlds fastest growing Beauty Brand."
+    },{
+        "type": "textblock",
         "image": {
             "src": "https://via.placeholder.com/150x200.png/",
             "alt": "placeholder"
         },
         "text": "Based in London for the last 11 years. I've gone from Academic departments, to startups in warehouses in Kentish town to the worlds fastest growing Beauty Brand."
     },{
-        "type": "two_columns",
-        "image": {
-            "src": "https://via.placeholder.com/150x200.png/",
-            "alt": "placeholder"
-        },
-        "text": "Based in London for the last 11 years. I've gone from Academic departments, to startups in warehouses in Kentish town to the worlds fastest growing Beauty Brand."
-    },{
-        "type": "two_columns",
+        "type": "two_column",
         "image": {
             "src": "https://via.placeholder.com/150x200.png/",
             "alt": "placeholder"

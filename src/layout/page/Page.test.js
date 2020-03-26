@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Page from './Page';
+import ContentSection from '../../components/contentsection/ContentSection';
 import { shallow } from 'enzyme';
 
 describe('Homepage component', () => {
@@ -23,8 +24,10 @@ describe('Homepage component', () => {
     };
 
     const app = shallow(<Page content={content}/>);
+    const ContentSections = app.find(ContentSection);
 
-    expect(app.find('section.page-intro').length).toBe(1);
+    expect(ContentSections.length).toBe(1);
+    expect(ContentSections.at(0).hasClass('page-intro')).toBe(true);
   });
 
   it('has one intro section if there is more than one section', () => {
@@ -34,8 +37,17 @@ describe('Homepage component', () => {
     };
 
     const app = shallow(<Page content={content}/>);
+    const ContentSections = app.find(ContentSection);
 
-    expect(app.find('section.page-intro').length).toBe(1);
-    expect(app.find('section.page-body').length).toBe(1);
+    expect(ContentSections.length).toBe(2);
+
+    ContentSections.forEach((ele, index) => expect(ele.key()).toBe(index.toString()));
+
+    expect(ContentSections.at(0).hasClass('page-intro')).toBe(true);
+    expect(ContentSections.at(0).hasClass('even')).toBe(true);
+    expect(ContentSections.at(0).hasClass('odd')).toBe(false);
+    expect(ContentSections.at(1).hasClass('page-intro')).toBe(false);
+    expect(ContentSections.at(1).hasClass('even')).toBe(false);
+    expect(ContentSections.at(1).hasClass('odd')).toBe(true);
   });
 });
