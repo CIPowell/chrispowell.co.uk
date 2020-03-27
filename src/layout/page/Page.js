@@ -3,7 +3,7 @@ import React from 'react';
 import './Page.scss';
 import ContentSection from '../../components/contentsection/ContentSection';
 
-const Home = (props) => {
+const Page = (props) => {
   function getSectionClasses(index) {
     const classList = [(index % 2 === 0 ? 'even' : 'odd')];
 
@@ -21,4 +21,4 @@ const Home = (props) => {
   </section>;
 }
 
-export default Home;
+export default Page;

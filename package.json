@@ -7,8 +7,8 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "node-sass": "^4.13.1",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "react-transition-group": "^4.3.0",
@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:e2e": "cypress open"
+    "test:e2e": "cypress run",
+    "sonar": "sonar-scanner"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,6 +45,7 @@
     "cypress-cucumber-preprocessor": "^2.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
-    "tachyons": "^4.10.0"
+    "sonarqube-scanner": "^2.6.0",
+    "tachyons": "^4.11.1"
   }
 }

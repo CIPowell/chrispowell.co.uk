@@ -16,6 +16,7 @@ jobs:
       - run: npm test  
         env: 
           CI: true
+      - run: npm run sonar -- -Dsonar.login=${{ secrets.SONAR_LOGIN }} -Dsonar.pullrequest.branch=${GITHUB_REF#refs/heads/} -Dsonar.pullrequest.base=master -Dsonar.pullrequest.key=${GITHUB_REF//[^0-9]/}
       - run: npm run build
       - name: push to S3
         uses: jakejarvis/s3-sync-action@v0.5.0
@@ -27,3 +28,7 @@ jobs:
             AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             AWS_REGION: 'eu-west-1'
             SOURCE_DIR: 'build'
+      - name: Integration Tests 
+        run: npm run test:e2e
+        env:
+          CYPRESS_BASE_URL: http://dev.chrisipowell.co.uk

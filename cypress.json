@@ -1,4 +1,4 @@
 {
-    "baseUrl" : "https://chrisipowell.co.uk",
+    "baseUrl" : "http://localhost:3000",
     "testFiles": "**/*.feature"
 }
