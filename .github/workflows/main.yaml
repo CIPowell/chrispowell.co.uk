@@ -29,3 +29,11 @@ jobs:
             AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             AWS_REGION: 'eu-west-1'
             SOURCE_DIR: 'build'
+      - name: Integration Tests 
+        run: npm run test:e2e
+        env:
+          CYPRESS_BASE_URL: https://www.chrisipowell.co.uk
+      - name: Bump version
+        run: npm version minor
+      - name: Push tags
+        run: git push --tags
