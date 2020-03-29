@@ -1,25 +1,7 @@
 {
-    "headline": "Chris has been working in an eclectic mix of companies and roles since 2006",
+    "headline": "I've workied in a series of different environments since 2006",
     "sections": [{
-        "type": "two_column",
-        "image": {
-            "src": "https://via.placeholder.com/150.png/",
-            "alt": "placeholder"
-        },
-        "text": "Based in London for the last 11 years. I've gone from Academic departments, to startups in warehouses in Kentish town to the worlds fastest growing Beauty Brand."
-    },{
         "type": "textblock",
-        "image": {
-            "src": "https://via.placeholder.com/150x200.png/",
-            "alt": "placeholder"
-        },
-        "text": "Based in London for the last 11 years. I've gone from Academic departments, to startups in warehouses in Kentish town to the worlds fastest growing Beauty Brand."
-    },{
-        "type": "two_column",
-        "image": {
-            "src": "https://via.placeholder.com/150x200.png/",
-            "alt": "placeholder"
-        },
-        "text": "Based in London for the last 11 years. I've gone from Academic departments, to startups in warehouses in Kentish town to the worlds fastest growing Beauty Brand."
+        "text": "I'm currently a Manager of Managers, having spent 12 years in a variety of Software Engineer roles doesing everything from Building a Peer-to-Peer currency exchange plafrom to debugging excel spreadsheets to tracking the spread of Infectious Diseases. I decided to take on the challenge of building and debugging teams rather than code."
     }]
 }

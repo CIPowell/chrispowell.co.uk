@@ -1,4 +1,22 @@
 {
-    "headline": "About",
-    "sections": []
+    "headline": "My Manager Readme",
+    "sections": [{
+        "type": "textblock",
+        "text": "How do I measure my teams?"
+    },{
+        "type": "textblock",
+        "text": "What do I value most in my teams?"
+    },{
+        "type": "textblock",
+        "text": "What do I expect from my teams?"
+    },{
+        "type": "textblock",
+        "text": "How do I do 1:1s?"
+    },{
+        "type": "textblock",
+        "text": "Personality Quirks"
+    },{
+        "type": "textblock",
+        "text": "What do I want to see from people in their first 90 days?"
+    }]
 }
