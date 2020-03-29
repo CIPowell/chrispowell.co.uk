@@ -19,6 +19,8 @@ jobs:
         env: 
           CI: true
       - run: npm run sonar -- -Dsonar.login=${{ secrets.SONAR_LOGIN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: npm run build
       - name: push to S3
         uses: jakejarvis/s3-sync-action@v0.5.0
