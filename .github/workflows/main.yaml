@@ -22,6 +22,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: npm run build
+      - name: Automated Version Bump
+        uses: phips28/gh-action-bump-version@master
+        with:
+          tag-prefix: ''
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: push to S3
         uses: jakejarvis/s3-sync-action@v0.5.0
         with:
@@ -36,7 +42,3 @@ jobs:
         run: npm run test:e2e
         env:
           CYPRESS_BASE_URL: https://www.chrisipowell.co.uk
-      - name: Bump version
-        run: npm version minor
-      - name: Push tags
-        run: git push --tags
