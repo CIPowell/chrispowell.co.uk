@@ -18,6 +18,7 @@ jobs:
       - run: npm test  
         env: 
           CI: true
+      - run: npm run sonar -- -Dsonar.login=${{ secrets.SONAR_LOGIN }}
       - run: npm run build
       - name: push to S3
         uses: jakejarvis/s3-sync-action@v0.5.0
@@ -29,3 +30,11 @@ jobs:
             AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             AWS_REGION: 'eu-west-1'
             SOURCE_DIR: 'build'
+      - name: Integration Tests 
+        run: npm run test:e2e
+        env:
+          CYPRESS_BASE_URL: https://www.chrisipowell.co.uk
+      - name: Bump version
+        run: npm version minor
+      - name: Push tags
+        run: git push --tags

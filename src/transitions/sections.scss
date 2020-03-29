@@ -1,25 +1,23 @@
 .sections-enter {
-    position: absolute;
-    width: 100%;
+    height: 0;
     opacity: 0;
 }
 
 .sections-enter-active {
-    position: absolute;
-    width: 100%;
+    height: 0;
+    opacity: 0;
+}
+
+.sections-enter-done {
     opacity: 1;
-    transition: opacity 500ms;
+    transition: opacity 300ms;
 }
 
 .sections-exit {
-    position: absolute;
-    width: 100%;
     opacity: 1;
 }
 
 .sections-exit-active {
-    position: absolute;
-    width: 100%;
     opacity: 0;
-    transition: opacity 500ms;
+    transition: opacity 300ms;
 }

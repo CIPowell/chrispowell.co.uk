@@ -11,7 +11,7 @@ export class Header extends Component {
         return (<header>
             <Link to="/" className="header-logo-link"><CIPIcon height={75} /></Link>
             <h1>Chris I Powell</h1>
-            <h2>Code and Hockey</h2>
+            <h2>Engineering Leader and Polyglot Developer</h2>
             <Nav />
         </header>);
     }

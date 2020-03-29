@@ -1,0 +1,17 @@
+@import '../../../node_modules/tachyons-sass/tachyons.scss';
+
+.page {
+    @extend .tl;
+    @extend .relative;
+    @extend .cf;
+
+    &-header h2 {
+        @extend .f3;
+        @extend .fw3;
+    }
+
+    &-intro {
+        @extend .f4;
+        @extend .fw1;
+    }
+}
