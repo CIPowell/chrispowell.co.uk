@@ -1,10 +1,9 @@
 Feature: The Homepage
-    The front page of the webstire
+    The front page of the website
 
-    Scenario: There should be one and only one H1 tag 
+    Scenario: The Title should be correct
         When I am on the Homepage
-        Then there should be 1 "h1" element
-            And the first "h1" element should contain "Chris I Powell"
+        Then the first "h1" element should contain "Chris I Powell"
         
     Scenario: Sub titile
         When I am on the Homepage
