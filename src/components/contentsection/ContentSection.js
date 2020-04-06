@@ -1,10 +1,12 @@
 import React from 'react';
 import TextBlock from '../textblock/TextBlock';
 import TwoColumn from '../twocolumn/TwoColumn';
+import SectionHeader from '../sectionheader/SectionHeader';
 
 const Blocks = {
     'two_column': TwoColumn,
-    'textblock' : TextBlock
+    'text_block' : TextBlock,
+    'section_header': SectionHeader
 }
 
 const ContentSection = (props) => {
