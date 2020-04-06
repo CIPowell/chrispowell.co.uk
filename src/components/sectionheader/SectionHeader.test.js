@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 
 import SectionHeader from './SectionHeader';
 
-describe('Secion Header', () => {
+describe('Section Header', () => {
     it('Should render a section header with the correct text', () => {
         const content = {
             text: 'A header'

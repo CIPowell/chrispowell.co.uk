@@ -12,7 +12,6 @@ describe('A Text Block', () => {
 
         const block = shallow(<TextBlock content={content} />);
 
-        expect(block.find('section').length).toBe(1);
         expect(block.containsMatchingElement(<p>Hello World!</p>)).toBe(true);
     });
 

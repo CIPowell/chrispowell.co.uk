@@ -13,7 +13,7 @@ describe('Homepage component', () => {
 
     const app = shallow(<Page content={content}/>);
 
-    expect(app.containsMatchingElement(<h2>{content.headline}</h2>))
+    expect(app.containsMatchingElement(<h1>{content.headline}</h1>))
       .toEqual(true);
   });
 
