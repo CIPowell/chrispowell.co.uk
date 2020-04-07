@@ -23,7 +23,14 @@
     "sonar": "sonar-scanner"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "plugins": [
+      "cypress",
+      "sonarjs"
+    ],
+    "env": {
+      "cypress/globals": true
+    }
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true
@@ -41,10 +48,12 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^4.2.0",
+    "cypress": "^4.3.0",
     "cypress-cucumber-preprocessor": "^2.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "eslint-plugin-cypress": "^2.10.3",
+    "eslint-plugin-sonarjs": "^0.5.0",
     "sonarqube-scanner": "^2.6.0",
     "tachyons": "^4.11.1"
   }
