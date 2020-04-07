@@ -13,7 +13,7 @@ import './transitions/sections.scss';
 document.title = "Chris I Powell";
 
 TagManager.initialize({
-  gtmId: 'UA-65763968-1'
+  gtmId: 'UA-65763968-2'
 });
 
 ReactDOM.render(
