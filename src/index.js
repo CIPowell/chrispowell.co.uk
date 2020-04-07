@@ -2,14 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { Header } from './layout/header/Header';
-import Body from './layout/body/Body';
+import TagManager from 'react-gtm-module';
 
+import Body from './layout/body/Body';
+import { Footer } from './layout/footer/Footer';
+import { Header } from './layout/header/Header';
 import './index.scss';
 import './transitions/sections.scss';
-import { Footer } from './layout/footer/Footer';
 
 document.title = "Chris I Powell";
+
+TagManager.initialize({
+  gtmId: 'UA-65763968-1'
+});
 
 ReactDOM.render(
   <Router>
@@ -19,4 +24,3 @@ ReactDOM.render(
   </Router>,
   document.getElementById('root')
 );
-  
