@@ -1,9 +1,7 @@
 import React from 'react';
 
 const TextBlock = (props) => {
-    return <section className="textblock">
-        <p>{props.content.text}</p>
-    </section>
+    return <p>{props.content.text}</p>
 }
 
 

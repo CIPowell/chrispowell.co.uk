@@ -14,7 +14,7 @@ const Page = (props) => {
 
   return <section className="page">
     <header className="page-header">
-      <h2>{props.content.headline}</h2>
+      <h1>{props.content.headline}</h1>
     </header>
 
     {props.content.sections.map((section, index) => <ContentSection content={section} key={index} className={getSectionClasses(index)} />)}

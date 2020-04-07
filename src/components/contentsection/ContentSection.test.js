@@ -5,11 +5,13 @@ import TextBlock from '../textblock/TextBlock';
 import { shallow } from 'enzyme';
 import TwoColumn from '../twocolumn/TwoColumn';
 import SectionHeader from '../sectionheader/SectionHeader';
+import SectionSubHeader from '../sectionsubheader/SectionSubHeader';
 
 const testComponents = {
     'TextBlock' : TextBlock,
     'TwoColumn' : TwoColumn,
-    'SectionHeader': SectionHeader
+    'SectionHeader': SectionHeader,
+    'SectionSubHeader': SectionSubHeader
 }
 
 describe('A Content Section', () => {
@@ -18,6 +20,7 @@ describe('A Content Section', () => {
         ${'text_block'} | ${'TextBlock'}
         ${'two_column'} | ${'TwoColumn'}
         ${'section_header'} | ${'SectionHeader'}
+        ${'section_subheader'} | ${'SectionSubHeader'}
     `('Block type $blockType should return a react element of type $elementName', ({blockType, elementName}) =>{
         const content = {
             type: blockType,

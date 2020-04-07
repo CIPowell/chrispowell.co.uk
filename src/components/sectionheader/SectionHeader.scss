@@ -1,0 +1,7 @@
+@import '../../../node_modules/tachyons-sass/tachyons.scss';
+
+h2 {
+    @extend .fw2;
+    @extend .pb0;
+    @extend .mb0;
+}
