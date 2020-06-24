@@ -1,16 +1,22 @@
 import React from 'react';
-import { MemoryRouter as Router } from 'react-router-dom'
+import { MemoryRouter as Router } from 'react-router-dom';
+import configureStore from 'redux-mock-store';
 
 import Body from './Body';
 import { shallow, mount } from 'enzyme';
 import Page from '../page/Page';
 import ErrorPage from '../errorpage/ErrorPage';
+import { Provider } from 'react-redux';
 
 describe('the Body Component', () => {
+  const mockStore = configureStore()({ blogStore: {} });
+
   it('renders without crashing', () => {
-    shallow(<Router initialEntries={["/"]}>
+    shallow(<Provider store={mockStore}>
+      <Router initialEntries={["/"]}>
         <Body />
-      </Router>);
+      </Router>
+    </Provider>);
   });
 
   it.each`
@@ -21,9 +27,9 @@ describe('the Body Component', () => {
     ${'/blog'}  | ${'blog'}
   `
   ('renders the $pagename page', ({page}) => {
-    const app = mount(<Router initialEntries={[page]} >
+    const app = mount(<Provider store={mockStore}><Router initialEntries={[page]} >
       <Body />
-    </Router>);
+    </Router></Provider>);
 
     const pages = app.find(Page);
     expect(pages.length).toBe(1);
@@ -38,9 +44,9 @@ describe('the Body Component', () => {
     ${'/404'} 
   `
   ('renders an error page on $page', ({page}) => {
-    const app = mount(<Router initialEntries={[page]} >
+    const app = mount(<Provider store={mockStore}><Router initialEntries={[page]} >
       <Body />
-    </Router>);
+    </Router></Provider>);
 
     const pages = app.find(Page);
     expect(pages.length).toBe(0);
