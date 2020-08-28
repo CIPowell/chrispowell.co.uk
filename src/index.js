@@ -11,7 +11,7 @@ import store from './store/store';
 
 import './index.scss';
 import './transitions/sections.scss';
-
+import { fetchPosts } from './store/blog/actions';
 
 document.title = "Chris I Powell";
 
@@ -29,3 +29,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+
+store.dispatch(fetchPosts());

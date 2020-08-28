@@ -9,7 +9,7 @@ import ErrorPage from '../errorpage/ErrorPage';
 import { Provider } from 'react-redux';
 
 describe('the Body Component', () => {
-  const mockStore = configureStore()({ blogStore: {} });
+  const mockStore = configureStore()({ blogStore: { posts: [] } });
 
   it('renders without crashing', () => {
     shallow(<Provider store={mockStore}>

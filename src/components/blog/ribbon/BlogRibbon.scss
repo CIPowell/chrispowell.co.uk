@@ -1,0 +1,19 @@
+@import '../../../../node_modules/tachyons-sass/tachyons.scss';
+
+.blog-ribbon .window{
+    @extend .w-100;
+
+    .ribbon {
+        
+        article {
+            @extend .dib;
+            @extend .pr2;
+            @extend .w-100;
+            @extend .w-50-ns;
+            @extend .v-top;
+            text-overflow: ellipsis;
+
+            max-lines: 20;
+        }
+    }
+}

@@ -13,3 +13,20 @@ export function onPostsArrived(posts = []) {
 export function onPostsFailed(error = '') {
     return { type: POSTS_FAILED, error };
 }
+
+export function fetchPosts() {
+    return async function (dispatch) {
+        dispatch(getPosts());
+
+        try {
+            const response = await fetch('https://ugp71764c3.execute-api.eu-west-1.amazonaws.com/dev/blog', {
+                method: 'GET'
+            });
+            const posts = await response.json();
+                
+            dispatch(onPostsArrived(posts));
+        } catch (err) {
+            dispatch(onPostsFailed(err));
+        }
+    }
+}
