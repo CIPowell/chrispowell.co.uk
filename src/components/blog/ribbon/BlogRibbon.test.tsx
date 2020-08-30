@@ -12,6 +12,21 @@ describe('The Blog Ribbon', () => {
         
         expect(component.find('section')).toHaveLength(1);
     });
+
+    it('should render one post when ther is one post', () => {
+        const blogRibbonProps: BlogStore = {
+            loading: false,
+            posts: [
+                { video: undefined, title: "Hello World", body: "Welcome"}
+            ],
+            page: 1,
+            postsOnPage: 5
+        }
+
+        const component = shallow(<BlogRibbon {...blogRibbonProps} />);
+
+        expect(component.find('article')).toHaveLength(1);
+    })
 });
 
 describe('The Connected Blog Ribbon', () => {
