@@ -45,6 +45,8 @@ export function blogStore(state : IBlogPostList = new BlogStore(), action: any) 
                 error: action.error
             });
         default:
-            return state;
+            return Object.assign({}, state, {
+                error: `action "${action.type}" not implemented in the Blog Store`
+            })
     }
 }

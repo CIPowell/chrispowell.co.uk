@@ -63,6 +63,9 @@
     ]
   },
   "devDependencies": {
+    "@stryker-mutator/core": "^3.3.1",
+    "@stryker-mutator/jest-runner": "^3.3.1",
+    "@stryker-mutator/typescript": "^3.3.1",
     "cypress": "^4.12.1",
     "cypress-cucumber-preprocessor": "^2.5.5",
     "enzyme": "^3.11.0",
