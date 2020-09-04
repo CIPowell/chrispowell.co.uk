@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, ShallowWrapper } from 'enzyme';
 import configureStore from 'redux-mock-store';
 
 import ConnectedBlogRibbon, { BlogRibbon } from './BlogRibbon';
@@ -13,7 +13,7 @@ describe('The Blog Ribbon', () => {
         expect(component.find('section')).toHaveLength(1);
     });
 
-    it('should render one post when ther is one post', () => {
+    it('should render one post when there is one post', () => {
         const blogRibbonProps: BlogStore = {
             loading: false,
             posts: [
@@ -26,6 +26,10 @@ describe('The Blog Ribbon', () => {
         const component = shallow(<BlogRibbon {...blogRibbonProps} />);
 
         expect(component.find('section')).toHaveLength(1);
+
+        let h3s: ShallowWrapper = component.find('h3');
+        expect(h3s).toHaveLength(1);
+        expect(h3s.at(0).text()).toBe("Hello World");
     })
 });
 

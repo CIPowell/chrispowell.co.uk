@@ -17,7 +17,7 @@ export function onPostsFailed(error: string = '') {
 export function fetchPosts({ apiRoot } : { apiRoot: string }) {
     return async function (dispatch: Function) {
         dispatch(getPosts());
-        //https://ugp71764c3.execute-api.eu-west-1.amazonaws.com/dev
+        
         try {
             const response = await fetch(`${apiRoot}/blog`, {
                 method: 'GET'
