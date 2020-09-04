@@ -25,12 +25,12 @@ describe('The Blog Ribbon', () => {
 
         const component = shallow(<BlogRibbon {...blogRibbonProps} />);
 
-        expect(component.find('article')).toHaveLength(1);
+        expect(component.find('section')).toHaveLength(1);
     })
 });
 
 describe('The Connected Blog Ribbon', () => {
-    const initialState =  new BlogStore();
+    const initialState = new BlogStore();
     const mockStore = configureStore();
     const blogRibbonProps = {
         store: mockStore({blogStore: initialState})

@@ -30,4 +30,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-store.dispatch(fetchPosts());
+store.dispatch(fetchPosts({ apiRoot: 'https://ugp71764c3.execute-api.eu-west-1.amazonaws.com/dev' }));

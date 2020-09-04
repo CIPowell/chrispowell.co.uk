@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getPosts, onPostsArrived, onPostsFailed } from '../../../store/blog/actions';
 import { Video } from '../../video/Video';
-import { BlogStore } from '../../../store/blog/store';
+import { IBlogPostList } from '../../../store/blog/store';
 
 import './BlogRibbon.scss';
 
-export const BlogRibbon = (blogList: BlogStore) => {
+export const BlogRibbon = (blogList: IBlogPostList) => {
     return <section className='blog-ribbon'>
         <h2>Recent Posts</h2>   
         <div className="window">
@@ -20,7 +20,15 @@ export const BlogRibbon = (blogList: BlogStore) => {
     </section>;
 }
 
-const mapStatetoProps = ({ blogStore } : {blogStore: BlogStore}) => blogStore;
+const mapStatetoProps = ({ blogStore } : { blogStore: IBlogPostList }) => {
+    let state: IBlogPostList = {
+        posts: blogStore.posts,
+        loading: blogStore.loading,
+        postsOnPage: blogStore.postsOnPage,
+        page: blogStore.page
+    };
+    return state;
+};
 
 const mapDispatch = { getPosts, onPostsArrived, onPostsFailed };
 

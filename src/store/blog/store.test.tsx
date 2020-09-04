@@ -1,4 +1,4 @@
-import { blogStore, BlogStore, IBlogPost } from './store';
+import { blogStore, BlogStore } from './store';
 import { REQUEST_POSTS, POSTS_ARRIVED, POSTS_FAILED } from './actions';
 
 describe("The Blog store >> ", () => {
