@@ -6,12 +6,14 @@ import { shallow } from 'enzyme';
 import TwoColumn from '../twocolumn/TwoColumn';
 import SectionHeader from '../sectionheader/SectionHeader';
 import SectionSubHeader from '../sectionsubheader/SectionSubHeader';
+import BlogRibbon from '../blog/ribbon/BlogRibbon';
 
 const testComponents = {
     'TextBlock' : TextBlock,
     'TwoColumn' : TwoColumn,
     'SectionHeader': SectionHeader,
-    'SectionSubHeader': SectionSubHeader
+    'SectionSubHeader': SectionSubHeader,
+    'BlogRibbon': BlogRibbon
 }
 
 describe('A Content Section', () => {
@@ -21,6 +23,7 @@ describe('A Content Section', () => {
         ${'two_column'} | ${'TwoColumn'}
         ${'section_header'} | ${'SectionHeader'}
         ${'section_subheader'} | ${'SectionSubHeader'}
+        ${'blog_ribbon'} | ${'BlogRibbon'}
     `('Block type $blockType should return a react element of type $elementName', ({blockType, elementName}) =>{
         const content = {
             type: blockType,
@@ -34,5 +37,4 @@ describe('A Content Section', () => {
 
         expect(block.containsMatchingElement(childComponent)).toBe(true);
     });
-
 });

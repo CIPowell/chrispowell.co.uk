@@ -29,6 +29,7 @@ node_modules/
 
 # testing
 /coverage
+/reports 
 
 # production
 /build
@@ -46,3 +47,5 @@ yarn-error.log*
 
 .scannerwork
 cypress/videos
+# stryker temp files
+.stryker-tmp
