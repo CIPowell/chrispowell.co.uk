@@ -12,8 +12,11 @@ import store from './store/store';
 import './index.scss';
 import './transitions/sections.scss';
 import { fetchPosts } from './store/blog/actions';
+import { IContext, getContext } from './config/Config';
 
-document.title = "Chris I Powell";
+var ctx: IContext = getContext();
+
+document.title = ctx.siteTitle;
 
 TagManager.initialize({
   gtmId: 'GTM-562XF3B'
@@ -30,4 +33,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-store.dispatch(fetchPosts({ apiRoot: 'https://ugp71764c3.execute-api.eu-west-1.amazonaws.com/dev' }));
+store.dispatch(fetchPosts(ctx));
