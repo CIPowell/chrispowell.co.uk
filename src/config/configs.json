@@ -1,17 +1,17 @@
 [
     {
         "siteUrl": "www.chrisipowell.co.uk" ,
-        "apiRoot": "https://ugp71764c3.execute-api.eu-west-1.amazonaws.com/dev",
+        "apiBase": "https://ugp71764c3.execute-api.eu-west-1.amazonaws.com/dev",
         "siteTitle": "Chris I Powell"
     },
     {
         "siteUrl": "dev.chrisipowell.co.uk",
-        "apiRoot": "https://ugp71764c3.execute-api.eu-west-1.amazonaws.com/dev",
+        "apiBase": "https://ugp71764c3.execute-api.eu-west-1.amazonaws.com/dev",
         "siteTitle": "[DEV] Chris I Powell"
     },
     { 
         "siteUrl": "localhost",
-        "apiRoot": "https://ugp71764c3.execute-api.eu-west-1.amazonaws.com/dev",
+        "apiBase": "https://ugp71764c3.execute-api.eu-west-1.amazonaws.com/dev",
         "siteTitle": "[LOCAL] Chris I Powell"
     }
 ]

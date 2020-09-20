@@ -5,8 +5,8 @@ export interface IContext {
     siteTitle: string
 }
 
-function getConfig() :Map<String, IContext> {
-    var configMap = new Map<String, IContext>();
+export function getConfig() :Map<string, IContext> {
+    var configMap = new Map<string, IContext>();
 
     Object.values(config).forEach(item => {
         configMap.set(item.siteUrl, Object.assign({ siteTitle: '', apiBase: '' }, item));
@@ -15,10 +15,10 @@ function getConfig() :Map<String, IContext> {
     return configMap;
 }
 
-export function getContext(data: Map<String, IContext> = getConfig(), currentHost: String = window.location.hostname) : IContext {        
-    let config = data.get(currentHost);
-    if (config) {
-        return config;
+export function getContext(data: Map<string, IContext> = getConfig(), currentHost: string = window.location.hostname) : IContext {        
+    let currentConfig = data.get(currentHost);
+    if (currentConfig) {
+        return currentConfig;
     }
     return { apiBase: "", siteTitle: ""}
 }
