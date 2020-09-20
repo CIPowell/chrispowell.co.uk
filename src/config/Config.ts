@@ -15,7 +15,7 @@ function getConfig() :Map<String, IContext> {
     return configMap;
 }
 
-export function getContext(data: Map<String, IContext> = getConfig(), currentHost: String = window.location.host) : IContext {        
+export function getContext(data: Map<String, IContext> = getConfig(), currentHost: String = window.location.hostname) : IContext {        
     let config = data.get(currentHost);
     if (config) {
         return config;
