@@ -2,9 +2,9 @@ import { fetchPosts, REQUEST_POSTS, POSTS_ARRIVED, POSTS_FAILED } from "./action
 
 describe('Blog Store actions >> ', () => {
     describe('Fetch posts >>',() => {
-        let fetchMock;
-        let dispatchMock;
-        let fetchAction;
+        let fetchMock : any;
+        let dispatchMock: Function;
+        let fetchAction: Function;
 
         const mockApiBase = 'https://test.chrisipowell.co.uk';
 
@@ -14,7 +14,7 @@ describe('Blog Store actions >> ', () => {
                 json: () => Promise.resolve([])
             });
             window.fetch = fetchMock;
-            fetchAction = fetchPosts({ apiRoot: mockApiBase});
+            fetchAction = fetchPosts({ apiBase: mockApiBase, siteTitle: ''});
         });
 
         it('should call the request posts action', async () => {

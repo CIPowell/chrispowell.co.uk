@@ -1,3 +1,5 @@
+import { IContext } from "../../config/Config";
+
 export const REQUEST_POSTS = 'REQUEST_POSTS';
 export const POSTS_ARRIVED = 'POSTS_ARRIVED';
 export const POSTS_FAILED = 'POSTS_FAILED';
@@ -14,8 +16,10 @@ export function onPostsFailed(error: string = '') {
     return { type: POSTS_FAILED, error };
 }
 
-export function fetchPosts({ apiRoot } : { apiRoot: string }) {
+export function fetchPosts(ctx : IContext) {
     return async function (dispatch: Function) {
+        var apiRoot: string = ctx.apiBase;
+
         dispatch(getPosts());
         
         try {
