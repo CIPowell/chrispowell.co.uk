@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { FunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
 
 import { ReactComponent as CIPIcon } from "../../static/assets/CIP.svg";
@@ -6,13 +6,11 @@ import { Nav } from '../nav/Nav';
 
 import './Header.scss';
 
-export class Header extends Component {
-    render() {
-        return (<header>
-            <Link to="/" className="header-logo-link"><CIPIcon height={75} /></Link>
-            <h1>Chris I Powell</h1>
-            <h2>Engineering Leader and Polyglot Developer</h2>
-            <Nav />
-        </header>);
-    }
+export const Header: FunctionComponent<unknown> = () => {
+    return (<header>
+        <Link to="/" className="header-logo-link"><CIPIcon height={75} /></Link>
+        <h1>Chris I Powell</h1>
+        <h2>Software Engineer/Architecht, Technologist, Dad, Cricketer, Hockey Player etc.</h2>
+        <Nav />
+    </header>);
 }
