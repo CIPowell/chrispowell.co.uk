@@ -1,22 +1,16 @@
 {
-    "headline": "My Manager Readme",
+    "headline": "About Chris",
     "sections": [{
         "type": "section_header",
-        "text": "How do I measure my teams?"
+        "text": "Technology Leader"
+    },{
+        "type": "text_block",
+        "text": "I strongly believe in technology as an enabler for people, businesses, non-profits and goverments"
+    },{
+        "type":"text_block",
+        "text": "Great technology has the power to lift people up, bad technology holds people back or worse."
     },{
         "type": "section_header",
-        "text": "What do I value most in my teams?"
-    },{
-        "type": "section_header",
-        "text": "What do I expect from my teams?"
-    },{
-        "type": "section_header",
-        "text": "How do I do 1:1s?"
-    },{
-        "type": "section_header",
-        "text": "Personality Quirks"
-    },{
-        "type": "section_header",
-        "text": "What do I want to see from people in their first 90 days?"
+        "text": "Reluctant blogger"
     }]
 }
