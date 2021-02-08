@@ -14,7 +14,7 @@ import './transitions/sections.scss';
 import { fetchPosts } from './store/blog/actions';
 import { IContext, getContext } from './config/Config';
 
-var ctx: IContext = getContext();
+const ctx: IContext = getContext();
 
 document.title = ctx.siteTitle;
 

@@ -4,7 +4,7 @@ import { REQUEST_POSTS, POSTS_ARRIVED, POSTS_FAILED } from './actions';
 describe("The Blog store >> ", () => {
     describe("when loading >> ", () => {
         it("should return a loading state of true", () => {
-            let { loading }: { loading: boolean } = blogStore(new BlogStore(), { type: REQUEST_POSTS });
+            const { loading }: { loading: boolean } = blogStore(new BlogStore(), { type: REQUEST_POSTS });
 
             expect(loading).toBeTruthy();
         });
@@ -12,10 +12,10 @@ describe("The Blog store >> ", () => {
 
     describe("When posts arrive successfully >>", () => {
         it("should return loading and error states of false", () => {
-            let state = new BlogStore();
+            const state = new BlogStore();
             state.loading = true;
 
-            let newState: BlogStore = blogStore(state, {
+            const newState: BlogStore = blogStore(state, {
                 type: POSTS_ARRIVED,
                 posts: [{
                     title: "test Post",
@@ -32,14 +32,14 @@ describe("The Blog store >> ", () => {
 
     describe("When posts fail to arrive >>", () => {
         it("should return an error state", () => {
-            let state = new BlogStore();
+            const state = new BlogStore();
             state.loading = true;
             state.posts = [{
                 title: "test Post",
                 body: "test post"
             }];
 
-            let newState: BlogStore = blogStore(state, {
+            const newState: BlogStore = blogStore(state, {
                 type: POSTS_FAILED,
                 error: "lost connection"
             });
@@ -52,14 +52,14 @@ describe("The Blog store >> ", () => {
 
     describe("Unknown Action >> ", () => {
         it("shold return an appropriate error", () => {
-            let state = new BlogStore();
+            const state = new BlogStore();
             state.loading = true;
             state.posts = [{
                 title: "test Post",
                 body: "test post"
             }];
 
-            let newState: BlogStore = blogStore(state, {
+            const newState: BlogStore = blogStore(state, {
                 type: "blah blah blah",
                 error: "lost connection"
             });

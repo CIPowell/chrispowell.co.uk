@@ -1,16 +1,24 @@
 import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
+import { render } from '@testing-library/react';
 import configureStore from 'redux-mock-store';
 
 import ConnectedBlogRibbon, { BlogRibbon } from './BlogRibbon';
 import { BlogStore } from '../../../store/blog/store';
+import { IContentSectionProps } from '../../contentsection/ContentSection';
 
 
 describe('The Blog Ribbon', () => {
     it('should render with an inital state', () => {
-        const component = shallow(<BlogRibbon loading={false} posts={[]} page={1} postsOnPage={1} />);
+        const blogRibbonProps: BlogStore = {
+            loading: false,
+            posts: [],
+            page: 1,
+            postsOnPage: 5
+        };
+
+        const { container } = render(<BlogRibbon type="blog_ribbon" posts={blogRibbonProps} />);
         
-        expect(component.find('section')).toHaveLength(1);
+        expect(container.querySelectorAll('section')).toHaveLength(1);
     });
 
     it('should render one post when there is one post', () => {
@@ -21,15 +29,20 @@ describe('The Blog Ribbon', () => {
             ],
             page: 1,
             postsOnPage: 5
-        }
+        };
 
-        const component = shallow(<BlogRibbon {...blogRibbonProps} />);
+        const contentSectionProps: IContentSectionProps = {
+            type: 'blog_ribbon',
+            posts: blogRibbonProps
+        };
 
-        expect(component.find('section')).toHaveLength(1);
+        const { container } = render(<BlogRibbon {...contentSectionProps} />);
 
-        let h3s: ShallowWrapper = component.find('h3');
+        expect(container.querySelectorAll('section')).toHaveLength(1);
+
+        const h3s = container.querySelectorAll('h3');
         expect(h3s).toHaveLength(1);
-        expect(h3s.at(0).text()).toBe("Hello World");
+        expect(h3s.item(0).textContent).toBe("Hello World");
     })
 });
 
@@ -41,7 +54,7 @@ describe('The Connected Blog Ribbon', () => {
     }
 
     it('should render with initial state', () => {
-        shallow(<ConnectedBlogRibbon {...blogRibbonProps}/>)
+        render(<ConnectedBlogRibbon {...blogRibbonProps}/>)
     });
 
 });

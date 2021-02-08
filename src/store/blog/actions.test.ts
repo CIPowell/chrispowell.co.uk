@@ -1,10 +1,11 @@
-import { fetchPosts, REQUEST_POSTS, POSTS_ARRIVED, POSTS_FAILED } from "./actions";
+import { Dispatch } from "redux";
+import { fetchPosts, REQUEST_POSTS, POSTS_ARRIVED, POSTS_FAILED, IBlogAction } from "./actions";
 
 describe('Blog Store actions >> ', () => {
     describe('Fetch posts >>',() => {
-        let fetchMock : any;
-        let dispatchMock: Function;
-        let fetchAction: Function;
+        let fetchMock : jest.Mock;
+        let dispatchMock: jest.Mock;
+        let fetchAction: (dispatch: Dispatch<IBlogAction>) => Promise<void>
 
         const mockApiBase = 'https://test.chrisipowell.co.uk';
 
