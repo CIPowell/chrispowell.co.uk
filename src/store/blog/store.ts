@@ -28,7 +28,7 @@ export class BlogStore implements IBlogPostList {
     error?: string;
 }
 
-export function blogStore(state : IBlogPostList = new BlogStore(), action: any) {
+export function blogStore(state : IBlogPostList = new BlogStore(), action: any): IBlogPostList {
     switch (action.type) {
         case REQUEST_POSTS:
             return Object.assign({}, state, {
