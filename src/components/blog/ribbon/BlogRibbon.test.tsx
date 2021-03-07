@@ -25,7 +25,7 @@ describe('The Blog Ribbon', () => {
         const blogRibbonProps: BlogStore = {
             loading: false,
             posts: [
-                { video: undefined, title: "Hello World", body: "Welcome"}
+                { video: undefined, title: "Hello World", preview: "Welcome", body: "Welcome", updatedAt: "2020-01-01 12:00:00", author: "CIP"}
             ],
             page: 1,
             postsOnPage: 5
@@ -40,7 +40,7 @@ describe('The Blog Ribbon', () => {
 
         expect(container.querySelectorAll('section')).toHaveLength(1);
 
-        const h3s = container.querySelectorAll('h3');
+        const h3s = container.querySelectorAll('h1');
         expect(h3s).toHaveLength(1);
         expect(h3s.item(0).textContent).toBe("Hello World");
     })

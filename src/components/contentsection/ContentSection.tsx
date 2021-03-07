@@ -3,8 +3,9 @@ import { TextBlock } from '../textblock/TextBlock';
 import { TwoColumn, IIimage } from '../twocolumn/TwoColumn';
 import { SectionHeader } from '../sectionheader/SectionHeader';
 import { SectionSubHeader } from '../sectionsubheader/SectionSubHeader';
-import { BlogRibbon } from '../blog/ribbon/BlogRibbon';
+import BlogRibbon from '../blog/ribbon/BlogRibbon';
 import { IBlogPostList } from '../../store/blog/store';
+import { Store } from 'redux';
 
 const Blocks: {[id: string]: FunctionComponent<IContentSectionProps>} = {
     'two_column': TwoColumn,
@@ -16,10 +17,11 @@ const Blocks: {[id: string]: FunctionComponent<IContentSectionProps>} = {
 
 export interface IContentSectionProps {
     type: string,
-    text?: string
+    text?: string,
     className?: string,
-    image?: IIimage
-    posts?: IBlogPostList
+    image?: IIimage,
+    posts?: IBlogPostList,
+    store?: Store
 }
 
 export const ContentSection : FunctionComponent<IContentSectionProps> = (props: IContentSectionProps) => {
