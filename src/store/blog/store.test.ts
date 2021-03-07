@@ -19,7 +19,10 @@ describe("The Blog store >> ", () => {
                 type: POSTS_ARRIVED,
                 posts: [{
                     title: "test Post",
-                    body: "test post"
+                    body: "test post",
+                    preview: "",
+                    author: "CIP",
+                    updatedAt: ""
                 }]
             });
 
@@ -36,7 +39,10 @@ describe("The Blog store >> ", () => {
             state.loading = true;
             state.posts = [{
                 title: "test Post",
-                body: "test post"
+                body: "test post",
+                preview: "",
+                author: "CIP",
+                updatedAt: ""
             }];
 
             const newState: BlogStore = blogStore(state, {
@@ -56,7 +62,10 @@ describe("The Blog store >> ", () => {
             state.loading = true;
             state.posts = [{
                 title: "test Post",
-                body: "test post"
+                body: "test post",
+                preview: "",
+                author: "CIP",
+                updatedAt: ""
             }];
 
             const newState: BlogStore = blogStore(state, {

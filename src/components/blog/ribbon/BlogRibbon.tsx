@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { connect } from 'react-redux';
 import { getPosts, onPostsArrived, onPostsFailed } from '../../../store/blog/actions';
-import { Video } from '../../video/Video';
 import { IBlogPostList } from '../../../store/blog/store';
+import BlogPreview from '../preview/BlogPreview';
 
 import './BlogRibbon.scss';
 import { IContentSectionProps } from '../../contentsection/ContentSection';
@@ -12,10 +12,7 @@ export const BlogRibbon: FunctionComponent<IContentSectionProps> = (props: ICont
         <h2>Recent Posts</h2>   
         <div className="window">
             <div className="ribbon">
-                {props.posts?.posts.map((post, index) => (<article key={index}>
-                    <h3>{post.title}</h3>
-                    { post.video ? <Video src={post.video} />: <div dangerouslySetInnerHTML={({__html: post.body})} />}  
-                </article>))}
+                {props.posts?.posts.map((post, index) => (<BlogPreview {...post} key={index} />))}
             </div> 
         </div>
     </section>;
@@ -23,7 +20,7 @@ export const BlogRibbon: FunctionComponent<IContentSectionProps> = (props: ICont
 
 const mapStatetoProps = ({ blogStore } : { blogStore: IBlogPostList }) => {
     const state: IContentSectionProps = {
-        type: 'blog_list',
+        type: 'ribbon',
         posts: {
             posts: blogStore.posts,
             loading: blogStore.loading,

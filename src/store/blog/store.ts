@@ -1,9 +1,12 @@
-import { REQUEST_POSTS, POSTS_ARRIVED, POSTS_FAILED } from './actions';
+import { REQUEST_POSTS, POSTS_ARRIVED, POSTS_FAILED, IBlogAction } from './actions';
 
 export interface IBlogPost {
     title: string
     body: string
+    preview: string
     video?: string
+    updatedAt: string
+    author: string
 }
 
 export interface IBlogPostList {
@@ -28,7 +31,7 @@ export class BlogStore implements IBlogPostList {
     error?: string;
 }
 
-export function blogStore(state : IBlogPostList = new BlogStore(), action: any): IBlogPostList {
+export function blogStore(state : IBlogPostList = new BlogStore(), action: IBlogAction): IBlogPostList {
     switch (action.type) {
         case REQUEST_POSTS:
             return Object.assign({}, state, {

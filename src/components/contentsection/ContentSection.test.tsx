@@ -2,8 +2,14 @@ import React from 'react';
 
 import { ContentSection, IContentSectionProps } from './ContentSection';
 import { render } from '@testing-library/react';
+import configureStore from 'redux-mock-store';
+import { BlogStore } from '../../store/blog/store';
+import { Provider } from 'react-redux';
 
 describe('A Content Section', () => {
+    const initialState = new BlogStore();
+    const mockStore = configureStore();
+
     it.each`
         blockType      | elementName
         ${'text_block'} | ${'TextBlock'}
@@ -17,7 +23,7 @@ describe('A Content Section', () => {
             className: ""
         };
 
-        const block = render(<ContentSection {...props} />);
+        const block = render(<Provider store={mockStore({blogStore: initialState})}><ContentSection {...props} /></Provider>);
 
         expect(block.container.children).not.toBeNull();
     });
