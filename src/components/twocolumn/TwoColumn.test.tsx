@@ -17,8 +17,8 @@ describe('A Two Column Block', () => {
         const block = render(<TwoColumn {...content} />);
 
         expect(block.container.querySelectorAll('section').length).toBe(1);
-        expect(block.findAllByText('Hello World!')).toBeTruthy();
-        expect(block.findAllByAltText('placeholder')).toBeTruthy()
+        expect(block.getByText('Hello World!')).toBeTruthy();
+        expect(block.getByAltText('placeholder')).toBeTruthy()
     });
     
     it('should not include a image if there is no image', () => {
