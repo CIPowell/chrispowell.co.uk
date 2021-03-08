@@ -1,4 +1,5 @@
 import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 
 import { render } from '@testing-library/react';
 import BlogPreview from './BlogPreview';
@@ -16,7 +17,7 @@ describe("Blog Preview", () => {
             updatedAt: DateTime.utc().minus({ days: 3 }).toISO()
         }
 
-        const element = render(<BlogPreview {...props}/>)
+        const element = render(<MemoryRouter><BlogPreview {...props}/></MemoryRouter>)
 
         const title = element.getByText("Hello World");
         const author = element.getByText("CIP");
@@ -54,7 +55,7 @@ describe("Blog Preview", () => {
                 updatedAt: DateTime.utc().minus(interval).toISO()
             }
 
-            const element = render(<BlogPreview {...props}/>)
+            const element = render(<MemoryRouter><BlogPreview {...props}/></MemoryRouter>)
             const date = element.getByText(output);
 
             expect(date).toBeTruthy();

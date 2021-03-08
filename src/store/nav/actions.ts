@@ -1,8 +1,5 @@
 import { Dispatch } from "react";
-import { Action, AnyAction } from "redux";
-import { ThunkAction, ThunkDispatch } from "redux-thunk";
 import { IContext } from "../../config/Config";
-import { NavStore } from "./nav";
 
 export const REQUEST_NAV = 'request_nav';
 export const RECEIVE_NAV = 'receive_nav';
@@ -19,7 +16,6 @@ export interface INavAction {
     links?: Array<INavLink>
     error?: string
 }
-
 
 export function requestNav(): INavAction {
     return {

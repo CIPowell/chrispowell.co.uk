@@ -16,6 +16,15 @@ article.blog__preview {
         margin-bottom: 1rem;
     }
 
+    a {
+        text-decoration: none;
+        @extend .black-80;
+        @extend .hover-light-blue;
+        transition: 0.5s color ease;
+    }
+
+    
+
     .updated {
         @extend .f5;
     }

@@ -6,6 +6,7 @@ import { Video } from '../../video/Video';
 import { IBlogPost } from '../../../store/blog/store';
 
 import './BlogPreview.scss';
+import { Link } from 'react-router-dom';
 
 interface IIntervalFormat {
     name: "days" | "weeks" | "months" | "years",
@@ -46,13 +47,15 @@ const getAgeOfPost = (dateString: string): string => {
 
 const BlogPreview : FunctionComponent<IBlogPost> = (props: IBlogPost) => {
     return <article className="blog__preview">
-        <h1>{props.title}</h1>
-        <h2>
-            <span className="updated">{getAgeOfPost(props.updatedAt)}</span> by <span className="author">{props.author} </span>
-        </h2>
-        
-        {props.video ? <Video src={props.video} /> : null}
-        <div dangerouslySetInnerHTML={({__html: props.preview})}></div>
+        <Link to="/blog">
+            <h1>{props.title}</h1>
+            <h2>
+                <span className="updated">{getAgeOfPost(props.updatedAt)}</span> by <span className="author">{props.author} </span>
+            </h2>
+            
+            {props.video ? <Video src={props.video} /> : null}
+            <div dangerouslySetInnerHTML={({__html: props.preview})}></div>
+        </Link>
     </article>
 }
 

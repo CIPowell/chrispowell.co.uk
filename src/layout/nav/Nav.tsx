@@ -1,14 +1,18 @@
-import React, { Component } from 'react';
-
-import './Nav.scss';
+import React, { FunctionComponent } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-export class Nav extends Component {
-    render () {
-        return (<nav className="main">
-            <Link to="/about">About</Link>
-            <Link to="/blog">Blog</Link>
-            <Link to="/cv">CV</Link>
-        </nav>);
-    }
+import './Nav.scss';
+
+import { NavStore } from '../../store/nav/nav';
+
+export const Nav : FunctionComponent<NavStore> = (props) =>
+    <nav className="main">
+        { props.links?.map(link => <Link to={link.slug}>{link.title}</Link>)}
+    </nav>;
+
+const mapStatetoProps = ({ nav } : { nav : NavStore }) => {
+    return nav;
 }
+
+export default connect(mapStatetoProps)(Nav);

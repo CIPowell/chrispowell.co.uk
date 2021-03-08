@@ -5,6 +5,7 @@ import configureStore from 'redux-mock-store';
 import ConnectedBlogRibbon, { BlogRibbon } from './BlogRibbon';
 import { BlogStore } from '../../../store/blog/store';
 import { IContentSectionProps } from '../../contentsection/ContentSection';
+import { MemoryRouter } from 'react-router';
 
 
 describe('The Blog Ribbon', () => {
@@ -36,7 +37,7 @@ describe('The Blog Ribbon', () => {
             posts: blogRibbonProps
         };
 
-        const { container } = render(<BlogRibbon {...contentSectionProps} />);
+        const { container } = render(<MemoryRouter><BlogRibbon {...contentSectionProps} /></MemoryRouter>);
 
         expect(container.querySelectorAll('section')).toHaveLength(1);
 
