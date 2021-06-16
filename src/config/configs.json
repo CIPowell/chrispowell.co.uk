@@ -1,7 +1,12 @@
 [
     {
+        "siteUrl": "chrisipowell.co.uk" ,
+        "apiBase": "https://ugp71764c3.execute-api.eu-west-1.amazonaws.com/prod",
+        "siteTitle": "Chris I Powell"
+    },
+    {
         "siteUrl": "www.chrisipowell.co.uk" ,
-        "apiBase": "https://ugp71764c3.execute-api.eu-west-1.amazonaws.com/dev",
+        "apiBase": "https://ugp71764c3.execute-api.eu-west-1.amazonaws.com/prod",
         "siteTitle": "Chris I Powell"
     },
     {
