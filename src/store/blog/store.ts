@@ -1,8 +1,9 @@
-import { REQUEST_POSTS, POSTS_ARRIVED, POSTS_FAILED, IBlogAction } from './actions';
+import { REQUEST_POSTS, POSTS_ARRIVED, POSTS_FAILED, IBlogAction, SELECT_CURRENT_POST, CURRENT_POST_SET, CURRENT_POST_NOT_LOADED } from './actions';
 
 export interface IBlogPost {
     title: string
     body: string
+    slug: string
     preview: string
     video?: string
     updatedAt: string
@@ -11,8 +12,10 @@ export interface IBlogPost {
 
 export interface IBlogPostList {
     posts: Array<IBlogPost>
-    loading: boolean,
-    page: number,
+    loading: boolean
+    slug?: string
+    selectedPost?: IBlogPost
+    page: number
     postsOnPage: number
     error?: string
 }
@@ -26,6 +29,8 @@ export class BlogStore implements IBlogPostList {
     }
     posts: IBlogPost[];
     loading: boolean;
+    slug?: string
+    selectedPost?: IBlogPost
     page: number;
     postsOnPage: number;
     error?: string;
@@ -45,6 +50,18 @@ export function blogStore(state : IBlogPostList = new BlogStore(), action: IBlog
         case POSTS_FAILED:
             return Object.assign({}, state, {
                 loading: false,
+                error: action.error
+            });
+        case SELECT_CURRENT_POST:
+            return Object.assign({}, state, {
+                slug: action.slug
+            });
+        case CURRENT_POST_SET:
+            return Object.assign({}, state, {
+                selectedPost: action.currentPost
+            });
+        case CURRENT_POST_NOT_LOADED:
+            return Object.assign({}, state, {
                 error: action.error
             });
         default:

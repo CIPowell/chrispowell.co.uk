@@ -1,22 +1,23 @@
-import React from 'react';
-
 import { render } from '@testing-library/react';
 import BlogPreview from './BlogPreview';
 import { IBlogPost } from '../../../store/blog/store';
 
 import { DateTime } from 'luxon';
 
+import { MemoryRouter as Router } from 'react-router-dom'
+
 describe("Blog Preview", () => {
     it('should render', async () => {
         const props : IBlogPost = {
             title: "Hello World",
+            slug: "hello-world",
             body: "<p>Hello World! Nice to meet you<p><p>shouldn't see this in preview</p>",
             preview: "<p>Hello World! Nice to meet you</p>",
             author: "CIP",
             updatedAt: DateTime.utc().minus({ days: 3 }).toISO()
         }
 
-        const element = render(<BlogPreview {...props}/>)
+        const element = render(<Router><BlogPreview {...props}/></Router>)
 
         const title = element.getByText("Hello World");
         const author = element.getByText("CIP");
@@ -48,13 +49,14 @@ describe("Blog Preview", () => {
         
             const props : IBlogPost = {
                 title: "Hello World",
+                slug: "hello-world",
                 body: "<p>Hello World! Nice to meet you<p><p>shouldn't see this in preview</p>",
                 preview: "<p>Hello World! Nice to meet you</p>",
                 author: "CIP",
                 updatedAt: DateTime.utc().minus(interval).toISO()
             }
 
-            const element = render(<BlogPreview {...props}/>)
+            const element = render(<Router><BlogPreview {...props}/></Router>)
             const date = element.getByText(output);
 
             expect(date).toBeTruthy();

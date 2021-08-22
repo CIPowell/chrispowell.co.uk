@@ -1,4 +1,3 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 import configureStore from 'redux-mock-store';
 
@@ -6,6 +5,7 @@ import ConnectedBlogRibbon, { BlogRibbon } from './BlogRibbon';
 import { BlogStore } from '../../../store/blog/store';
 import { IContentSectionProps } from '../../contentsection/ContentSection';
 
+import { MemoryRouter as Router } from 'react-router-dom';
 
 describe('The Blog Ribbon', () => {
     it('should render with an inital state', () => {
@@ -16,7 +16,10 @@ describe('The Blog Ribbon', () => {
             postsOnPage: 5
         };
 
-        const { container } = render(<BlogRibbon type="blog_ribbon" posts={blogRibbonProps} />);
+        const { container } = render(<Router>
+            <BlogRibbon type="blog_ribbon" posts={blogRibbonProps} />
+        </Router>);
+            
         
         expect(container.querySelectorAll('section')).toHaveLength(1);
     });
@@ -25,7 +28,7 @@ describe('The Blog Ribbon', () => {
         const blogRibbonProps: BlogStore = {
             loading: false,
             posts: [
-                { video: undefined, title: "Hello World", preview: "Welcome", body: "Welcome", updatedAt: "2020-01-01 12:00:00", author: "CIP"}
+                { video: undefined, slug:"hello-world", title: "Hello World", preview: "Welcome", body: "Welcome", updatedAt: "2020-01-01 12:00:00", author: "CIP"}
             ],
             page: 1,
             postsOnPage: 5
@@ -36,7 +39,9 @@ describe('The Blog Ribbon', () => {
             posts: blogRibbonProps
         };
 
-        const { container } = render(<BlogRibbon {...contentSectionProps} />);
+        const { container } = render(<Router>
+            <BlogRibbon {...contentSectionProps} />
+        </Router>);
 
         expect(container.querySelectorAll('section')).toHaveLength(1);
 
