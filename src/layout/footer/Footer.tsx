@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
-
-import {ReactComponent as GithubIcon} from '../../static/assets/icons/github.svg';
-import {ReactComponent as TwitterIcon} from '../../static/assets/icons/twitter.svg';
-import {ReactComponent as LinkedInIcon} from '../../static/assets/icons/linkedin.svg';
+import GithubIcon from '../../static/assets/icons/github.svg';
+import TwitterIcon from '../../static/assets/icons/twitter.svg';
+import LinkedInIcon from '../../static/assets/icons/linkedin.svg';
 
 import './Footer.scss';
+import { FunctionComponent } from 'react';
 
-export class Footer extends Component {
-    render () {
+export const Footer : FunctionComponent<unknown> = () => {
         return <footer>
             <p>&copy; Chris I Powell 2020</p>
             <ul className="contact">
@@ -29,4 +27,3 @@ export class Footer extends Component {
             </ul>
         </footer>;
     }
-}

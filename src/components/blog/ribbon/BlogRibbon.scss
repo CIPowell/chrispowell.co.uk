@@ -3,3 +3,12 @@
 .blog-ribbon .window{
     @extend .w-100;
 }
+
+.blog-ribbon a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-ribbon a:hover {
+    @extend .hover-light-blue
+}

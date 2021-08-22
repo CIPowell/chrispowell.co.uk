@@ -6,9 +6,15 @@ export const REQUEST_POSTS = 'REQUEST_POSTS';
 export const POSTS_ARRIVED = 'POSTS_ARRIVED';
 export const POSTS_FAILED = 'POSTS_FAILED';
 
+export const SELECT_CURRENT_POST = 'SELECT_CURRENT_POST';
+export const CURRENT_POST_SET = 'CURRENT_POST_SELECT';
+export const CURRENT_POST_NOT_LOADED = 'CURRENT_POST_NOT_LOADED';
+
 export interface IBlogAction {
-    type: string,
+    type: string
     posts?: IBlogPost[]
+    slug?: string
+    currentPost?: IBlogPost
     error?: string
 }
 
@@ -22,6 +28,18 @@ export function onPostsArrived(posts = []): IBlogAction {
 
 export function onPostsFailed(error: string): IBlogAction {
     return { type: POSTS_FAILED, error };
+}
+
+export function selectCurrentPost(slug: string): IBlogAction {
+    return  {type: SELECT_CURRENT_POST, slug }
+}
+
+export function currentPostSelected(post?: IBlogPost): IBlogAction {
+    return { type: CURRENT_POST_SET, currentPost: post }
+}
+
+export function currentPostNotLoaded(error: string): IBlogAction {
+    return { type: CURRENT_POST_NOT_LOADED, error }
 }
 
 export function fetchPosts(ctx : IContext) {
@@ -39,6 +57,26 @@ export function fetchPosts(ctx : IContext) {
             dispatch(onPostsArrived(posts));
         } catch (err) {
             dispatch(onPostsFailed(err.error));
+        }
+    }
+}
+
+export function getCurrentPost(ctx: IContext, slug: string) {
+    return async function(dispatch: Dispatch<IBlogAction>): Promise<void> {
+        const { apiBase } = ctx;
+        dispatch(selectCurrentPost(slug));
+
+        try {
+            const response = await fetch(`${apiBase}/blog`, {
+                method: 'GET'
+            });
+            const posts: IBlogPost[] = await response.json();
+            const selected = posts.filter(post => post.slug == slug);
+
+            dispatch(currentPostSelected(selected.length ? selected[0] : undefined));
+
+        } catch (err) {
+            dispatch(currentPostNotLoaded(err.error));
         }
     }
 }
