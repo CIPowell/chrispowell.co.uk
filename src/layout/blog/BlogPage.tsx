@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
@@ -13,9 +13,11 @@ import './BlogPage.scss';
 const BlogPage: FunctionComponent<unknown> = () => {
     const { slug } : {slug?: string} = useParams();
 
-    if (slug) {
-        store.dispatch(getCurrentPost(getContext(), slug));
-    }
+    useEffect(() => {
+        if (slug) {
+            store.dispatch(getCurrentPost(getContext(), slug));
+        }
+    }, [ slug ]);
     
     return <section className="blog-page">
         <BlogArticle />

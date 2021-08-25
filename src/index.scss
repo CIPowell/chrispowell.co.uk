@@ -2,8 +2,9 @@
 
 body {
     @extend .black-80;
-    @extend .avenir;
+    @extend .baskerville;
     @extend .tc;
+    @extend .f4;
 }
 
 h1 {
@@ -11,7 +12,7 @@ h1 {
 }
 
 h2 {
-    @extend .fw4;
+    @extend .fw5;
 }
 
 .container {
