@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { IBlogPost, IBlogPostList } from '../../../store/blog/store';
 import { currentPostSelected, currentPostNotLoaded } from '../../../store/blog/actions';
+import { getAge } from '../../../utils/dates';
 
 import './BlogArticle.scss';
 
@@ -17,6 +18,9 @@ const BlogArticle: FunctionComponent<IBlogArticleProps> = (props: IBlogArticlePr
     return  <article className="blog-article"> { selectedPost ?
                 <div>
                     <h1>{selectedPost.title}</h1>
+                    <h2 className="subtitle">
+                        <span className="updated">{getAge(selectedPost.updatedAt)}</span> by <span className="author">{selectedPost.author} </span>
+                    </h2>
                     <div dangerouslySetInnerHTML={({__html: selectedPost.body})}></div>
                 </div>
             : "" }

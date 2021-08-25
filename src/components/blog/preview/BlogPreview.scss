@@ -2,11 +2,17 @@
 
 article.blog__preview {
     @extend .dib;
-    @extend .pr2;
+    @extend .fw1;
+    @extend .pr3;
     @extend .w-100;
     @extend .w-50-m;
     @extend .w-33-ns;
     @extend .v-top;
+
+    h1 {
+        @extend .f3;
+        @extend .fw6;
+    }
 
     h2 {
         @extend .fw1;
