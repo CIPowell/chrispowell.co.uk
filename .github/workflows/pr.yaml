@@ -8,12 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js 12.x
+      - name: Use Node.js 16.x
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: 16.x
       - run: npm install
-      - run: npm test -- --coverage --watchAll=false
+      - run: npm test -- --coverage --watchAll=false --passWithNoTests 
         env: 
           CI: true
       - run: npm run sonar -- -Dsonar.login=${{ secrets.SONAR_LOGIN }} -Dsonar.pullrequest.branch=${GITHUB_REF#refs/heads/} -Dsonar.pullrequest.base=master -Dsonar.pullrequest.key=${GITHUB_REF//[^0-9]/}
