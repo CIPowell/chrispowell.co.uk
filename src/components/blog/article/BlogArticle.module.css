@@ -1,0 +1,31 @@
+.tag {
+    font-size: 0.9em;
+    border-radius: 1em;
+    display: inline-block;
+    text-transform: capitalize;
+    margin: 0.25em;
+    padding: 0.1em 1em;
+    background-color: gainsboro;
+}
+
+.blurb {
+    position: relative;
+    background-color: rgba(255,255,255, 0.9);
+    margin-bottom: 1vh;
+}
+
+.article {
+    width: 100%;
+}
+
+.article_body {
+    background-color: rgba(255,255,255, 0.9);
+}
+
+.featuredImage {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+}
+
