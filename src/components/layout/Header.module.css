@@ -1,0 +1,17 @@
+.header_image {
+    display: inline-block;
+    max-width: 128px;
+    vertical-align: middle;
+    margin-right: 1em;
+}
+
+@media (max-width: 600px) {
+    .header {
+        text-align: center;
+    }
+
+    .header_image {
+        display: block;
+        margin: auto;
+    }
+}

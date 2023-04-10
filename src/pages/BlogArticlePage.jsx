@@ -1,11 +1,17 @@
-import BlogArticle from "../components/blog/article/BlogArticle";
-import { builder } from '@builder.io/react';
+import { BuilderComponent, builder } from '@builder.io/react';
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import DateDisplay from '../components/date/DateDisplay';
 
 function BlogArticlePage() {
     const article = useLoaderData();
-    return <BlogArticle article={article} />
+    return (
+        <article role="main">
+            <h1>{article.title.Default}</h1>
+            <DateDisplay date={new Date(article.published)} />
+            <BuilderComponent model="blog-article" content={article} options={{includeRefs: false}}/>
+        </article>
+    )
 }
 
 export async function loader({params}) {
