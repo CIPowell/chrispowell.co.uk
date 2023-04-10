@@ -5,11 +5,12 @@ import DateDisplay from '../components/date/DateDisplay';
 
 function BlogArticlePage() {
     const article = useLoaderData();
+
     return (
         <article role="main">
-            <h1>{article.title.Default}</h1>
-            <DateDisplay date={new Date(article.published)} />
-            <BuilderComponent model="blog-article" content={article} options={{includeRefs: false}}/>
+            <h1>{article.data.title.Default}</h1>
+            <DateDisplay date={new Date(article.data.published)} />
+            <BuilderComponent model="blog-article" content={article} options={{}} />
         </article>
     )
 }
@@ -23,7 +24,7 @@ export async function loader({params}) {
             }
         }).promise();
 
-    return article.data;
+    return article;
 }
 
 export default BlogArticlePage;
