@@ -15,10 +15,12 @@ export default function BlogSummary(props) {
                     options: { includeRefs: true },
                     query: {
                         "data.tags": tag || undefined
+                        
                     },
                     sort: {
-                        "updated": -1
+                        "data.published": -1
                     }
+                    
                 });
              
             setPosts(response);

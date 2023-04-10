@@ -2,7 +2,17 @@
     display: inline-block;
     max-width: 128px;
     vertical-align: middle;
-    margin-right: 1em;
+    margin-right: 0.5em;
+}
+
+.header_banner_link {
+    text-decoration: none;
+    color: rgb(0,0,0);
+}
+
+.header_banner_link:hover {
+    text-decoration: none;
+    color: rgb(0,0,0);
 }
 
 @media (max-width: 600px) {
