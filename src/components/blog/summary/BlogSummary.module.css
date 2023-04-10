@@ -1,0 +1,12 @@
+.summary {
+    position: relative;
+    display: block;
+    margin: 1em 0;
+    clear: both;
+}
+
+.featuredImage {
+    float: left;
+    max-height: 10em;
+    margin: 0.5em 1em 0.5em 0em;
+}
