@@ -15,7 +15,7 @@
     "@types/react-transition-group": "^4.4.0",
     "@types/redux-mock-store": "^1.0.2",
     "hls.js": "^0.14.17",
-    "luxon": "^1.26.0",
+    "luxon": "^1.28.1",
     "node-sass": "^6.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
