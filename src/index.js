@@ -10,6 +10,7 @@ import Header from './components/layout/Header';
 import BlogArticlePage, { loader } from './pages/BlogArticlePage';
 import BlogHome from './pages/BlogHome';
 import Footer from './components/layout/Footer';
+import Navigation from './components/layout/Nav';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,7 @@ function init() {
   root.render(
     <React.StrictMode>
       <Header />
+      <Navigation />
       <RouterProvider router={router} role="main" />
       <Footer />
     </React.StrictMode>
