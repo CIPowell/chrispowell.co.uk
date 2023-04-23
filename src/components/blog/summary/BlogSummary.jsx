@@ -12,15 +12,16 @@ export default function BlogSummary(props) {
         async function getPosts() {
             let response = await builder
                 .getAll('blog-article', {
-                    options: { includeRefs: true },
+                    options: { 
+                        includeRefs: true,
+                        sort: {
+                            "data.published": -1
+                        }
+                    },
                     query: {
                         "data.tags": tag || undefined
                         
-                    },
-                    sort: {
-                        "data.published": -1
                     }
-                    
                 });
              
             setPosts(response);
@@ -32,13 +33,17 @@ export default function BlogSummary(props) {
     return (
         <section>
             {
-                posts.map(({data}) => {
-                    return (<article className={styles.summary} key={data.handle}>
-                        <h2><Link to={`/blog/${data.handle}`} >{data.title.Default}</Link></h2>
-                        <DateDisplay date={new Date(data.published)}/>
-                        <img src={data.featuredImage} alt="" className={styles.featuredImage}/>
-                        <p>{data.blurb}</p>
-                    </article>)
+                posts
+    
+                    .map(({data}) => {
+                        console.log(data.published)
+
+                        return (<article className={styles.summary} key={data.handle}>
+                            <h2><Link to={`/blog/${data.handle}`} >{data.title.Default}</Link></h2>
+                            <DateDisplay date={new Date(data.published)}/>
+                            <img src={data.featuredImage} alt="" className={styles.featuredImage}/>
+                            <p>{data.blurb}</p>
+                        </article>)
                 })
             }
         </section>
