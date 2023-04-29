@@ -31,7 +31,7 @@ export default function Page() {
       // if the page title is found, 
       // set the document title
       if (content?.data.title) {
-       document.title = content.data.title
+       document.title = "Chris I Powell - " + content.data.title
       }
     }
     fetchContent();
