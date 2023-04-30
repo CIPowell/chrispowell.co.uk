@@ -19,7 +19,7 @@ jobs:
       - run: npm run sonar -- -Dsonar.login=${{ secrets.SONAR_LOGIN }} -Dsonar.pullrequest.branch=${GITHUB_REF#refs/heads/} -Dsonar.pullrequest.base=master -Dsonar.pullrequest.key=${GITHUB_REF//[^0-9]/}
       - run: npm run build
       - name: push to S3
-        uses: jakejarvis/s3-sync-action@v0.5.0
+        uses: jakejarvis/s3-sync-action@v0.5.1
         with:
             args: --delete --acl public-read
         env:
