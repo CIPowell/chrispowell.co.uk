@@ -1,3 +1,7 @@
 {
-    "extends": ["react-app", "plugin:jsx-a11y/recommended"]
-  }
+    "extends": [
+        "react-app",
+        "plugin:jsx-a11y/recommended",
+        "plugin:storybook/recommended"
+    ]
+}

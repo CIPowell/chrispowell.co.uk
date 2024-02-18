@@ -1,0 +1,11 @@
+.featuredImage {
+    margin-right: 1em;
+    max-width: 500px;
+    float: left;
+}
+
+@media (max-width: 600px) {
+    .featuredImage {
+        display: none;
+    }
+}

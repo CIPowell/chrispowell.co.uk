@@ -18,7 +18,7 @@ jobs:
       - run: npm test -- --coverage  
         env: 
           CI: true
-      - run: npm run sonar -- -Dsonar.login=${{ secrets.SONAR_LOGIN }}
+      - run: npx sonarqube-scanner -Dsonar.login=${{ secrets.SONAR_LOGIN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: npm run build

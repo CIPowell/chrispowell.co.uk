@@ -1,12 +1,26 @@
 .summary {
     position: relative;
     display: block;
-    margin: 1em 0;
+    margin: 1em 0em 1em -1em;
+    
     clear: both;
 }
 
 .featuredImage {
     float: left;
-    max-height: 10em;
+    max-height: 6em;
     margin: 0.5em 1em 0.5em 0em;
+}
+
+.blog_link {
+    display: block;
+    color: black;   
+    overflow: auto;
+    transition: 0.3s background-color ease-in-out;
+    padding-left: 1em;
+}
+
+.blog_link:hover {
+    text-decoration: none;
+    background-color: rgba(200, 200, 255);
 }

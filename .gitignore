@@ -25,3 +25,6 @@ yarn-error.log*
 .scannerwork
 
 .envrc
+
+.storybook
+*.log

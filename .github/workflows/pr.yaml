@@ -16,8 +16,10 @@ jobs:
       - run: npm test -- --coverage --watchAll=false --passWithNoTests 
         env: 
           CI: true
-      - run: npm run sonar -- -Dsonar.login=${{ secrets.SONAR_LOGIN }} -Dsonar.pullrequest.branch=${GITHUB_REF#refs/heads/} -Dsonar.pullrequest.base=master -Dsonar.pullrequest.key=${GITHUB_REF//[^0-9]/}
+      - run: npx sonarqube-scanner -Dsonar.login=${{ secrets.SONAR_LOGIN }} -Dsonar.pullrequest.branch=${GITHUB_REF#refs/heads/} -Dsonar.pullrequest.base=master -Dsonar.pullrequest.key=${GITHUB_REF//[^0-9]/}
       - run: npm run build
+      - name: Build storybook and upload to Chromatic
+        run: npm run chromatic
       - name: push to S3
         uses: jakejarvis/s3-sync-action@v0.5.1
         with:

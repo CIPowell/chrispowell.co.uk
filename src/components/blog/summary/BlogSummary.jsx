@@ -19,8 +19,9 @@ export default function BlogSummary(props) {
                         }
                     },
                     query: {
-                        "data.tags": tag || undefined
-                        
+                        "data.tags.$elemMatch": tag ? {
+                           $in: ["engineering"]
+                        } : undefined
                     }
                 });
              
@@ -33,16 +34,18 @@ export default function BlogSummary(props) {
     return (
         <section>
             {
-                posts
-    
-                    .map(({data}) => {
-                        console.log(data.published)
-
+                posts.map(({data}) => {
                         return (<article className={styles.summary} key={data.handle}>
-                            <h2><Link to={`/blog/${data.handle}`} >{data.title.Default}</Link></h2>
-                            <DateDisplay date={new Date(data.published)}/>
-                            <img src={data.featuredImage} alt="" className={styles.featuredImage}/>
-                            <p>{data.blurb}</p>
+                            <Link to={`/blog/${data.handle}`} className={styles.blog_link}>
+                                <h2>{data.title.Default}</h2>
+                                <DateDisplay date={new Date(data.published)}/>
+                                <picture>
+                                    <source srcSet={`${data.featuredImage}?width=250&format=avif`} alt="" />
+                                    <source srcSet={`${data.featuredImage}?width=250&format=webp`} alt=""  />
+                                    <img src={`${data.featuredImage}?width=250`} alt="" className={styles.featuredImage} />
+                                </picture>
+                                <p>{data.blurb}</p>
+                            </Link>
                         </article>)
                 })
             }
