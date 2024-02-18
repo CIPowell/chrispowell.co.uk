@@ -1,3 +1,7 @@
+.header {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 .header_image {
     display: inline-block;
     max-width: 128px;
@@ -7,7 +11,7 @@
 
 .header_banner_link {
     text-decoration: none;
-    color: rgb(0,0,0);
+    color: rgb(0,30,0);
 }
 
 .header_banner_link:hover {

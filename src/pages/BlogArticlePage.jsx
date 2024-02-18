@@ -3,15 +3,30 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import DateDisplay from '../components/date/DateDisplay';
 
+import styles from './BlogArticlePage.module.css'
+import BlogSummary from '../components/blog/summary/BlogSummary';
+
 function BlogArticlePage() {
     const article = useLoaderData();
 
     return (
-        <article role="main">
-            <h1>{article.data.title.Default}</h1>
-            <DateDisplay date={new Date(article.data.published)} />
-            <BuilderComponent model="blog-article" content={article} options={{}} />
-        </article>
+        <section>
+            <article role="main">
+                <h1>{article.data.title.Default}</h1>
+                <DateDisplay date={new Date(article.data.published)} />
+                <picture>
+                    <source srcSet={`${article.data.featuredImage}?width=500&format=avif`} alt="" />
+                    <source srcSet={`${article.data.featuredImage}?width=500&format=webp`} alt=""  />
+                    <img src={`${article.data.featuredImage}?width=500`} alt="" className={styles.featuredImage} />
+                </picture>
+                <BuilderComponent model="blog-article" content={article} options={{}} />
+            </article>
+            <section role="navigation">
+                <h3>RelatedArticles</h3>
+                <BlogSummary tag={article.data.tags.join(",")} />
+            </section>
+        </section>
+        
     )
 }
 
