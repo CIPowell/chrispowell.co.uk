@@ -16,9 +16,11 @@ jobs:
           node-version: 16.x
       - run: npm install
       - run: npm test -- --coverage --watchAll=false --passWithNoTests 
-        env: 
+        env:
           CI: true
-      - run: npx sonarqube-scanner -Dsonar.login=${{ secrets.SONAR_LOGIN }} -Dsonar.pullrequest.branch=${GITHUB_REF#refs/heads/} -Dsonar.pullrequest.base=master -Dsonar.pullrequest.key=${GITHUB_REF//[^0-9]/}
+      - run: npx sonarqube-scanner  -Dsonar.pullrequest.branch=${GITHUB_REF#refs/heads/} -Dsonar.pullrequest.base=master -Dsonar.pullrequest.key=${GITHUB_REF//[^0-9]/}
+        env: 
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - run: npm run build
       - name: Build storybook and upload to Chromatic
         run: npm run chromatic
