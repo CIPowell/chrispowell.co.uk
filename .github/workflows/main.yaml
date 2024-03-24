@@ -20,10 +20,6 @@ jobs:
       - run: npm test -- --coverage  
         env: 
           CI: true
-      - run: npx sonarqube-scanner
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - run: npm run build
       - name: Automated Version Bump
         uses: phips28/gh-action-bump-version@master
