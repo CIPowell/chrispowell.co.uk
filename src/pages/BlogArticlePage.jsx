@@ -1,7 +1,7 @@
 import { BuilderComponent, builder } from '@builder.io/react';
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import DateDisplay from '../components/date/DateDisplay';
+import DateDisplay from '../components/atoms/date/DateDisplay';
 
 import styles from './BlogArticlePage.module.css'
 import BlogSummary from '../components/blog/summary/BlogSummary';

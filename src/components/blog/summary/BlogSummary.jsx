@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Builder, builder } from '@builder.io/react';
-import DateDisplay from "../../date/DateDisplay";
+import DateDisplay from "../../atoms/date/DateDisplay";
 import styles from "./BlogSummary.module.css";
 
 export default function BlogSummary(props) {

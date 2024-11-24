@@ -1,8 +1,16 @@
+html {
+  --color-primary: rgb(22, 106, 190);
+  --color-secondary: rgb(86, 0, 0);
+  --color-background: rgb(255, 255, 250);
+}
+
 body {
   font-family: 'Ink Free', 'Bradley Hand', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: var(--color-background);
 
   font-size: 14pt;
 
@@ -16,6 +24,7 @@ code {
 
 a {
   text-decoration: none;
+  color: var(--color-primary);
 }
 
 a:hover {

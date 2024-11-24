@@ -1,5 +1,5 @@
 .header {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
 }
 
 .header_image {
@@ -7,7 +7,7 @@
     max-width: 128px;
     vertical-align: middle;
     margin-right: 0.5em;
-}
+}  
 
 .header_banner_link {
     text-decoration: none;

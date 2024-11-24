@@ -1,0 +1,5 @@
+.current {
+    font-weight: bold;
+
+    transition: 200ms ease-in-out;
+}
